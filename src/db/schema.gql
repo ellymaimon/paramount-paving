@@ -1,0 +1,17 @@
+type Customer @collection(name: "customers") {
+  firstName: String!
+  lastName: String!
+  address: Address!
+  telephone: String!
+}
+
+type Address @embedded {
+  street: String!
+  city: String!
+  state: String!
+  zipCode: String!
+}
+
+type Query {
+ allCustomers: [Customer!]
+}
