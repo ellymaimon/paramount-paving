@@ -18,10 +18,21 @@ export function AddItem() {
 	const [createCustomer, { loading }] = useMutation(mutations.createCustomer, {
 		refetchQueries: [{ query: getAllCustomers }],
 		onCompleted: () => {
-			setFirstName("");
+			resetForm();
 			setShowForm(false);
 		},
 	});
+
+	const resetForm = () => {
+		setFormError(false);
+		setFirstName("");
+		setLastName("");
+		setTelephone("");
+		setStreet("");
+		setCity("");
+		setState("");
+		setZipCode("");
+	}
 
 	const handleSubmit = e => {
 		e.preventDefault();
