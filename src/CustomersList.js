@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { getAllCustomers } from "./db/queries";
 import CustomerCard from "./CustomerCard";
+import { Card } from "semantic-ui-react";
 
 export default function CustomersList() {
 	const { data, loading } = useQuery(getAllCustomers);
@@ -11,7 +12,7 @@ export default function CustomersList() {
 	}
 
 	return (
-		<ul>
+		<Card.Group>
 			{data.allCustomers.data.map((customer) => {
 				return (
 					<CustomerCard
@@ -20,6 +21,6 @@ export default function CustomersList() {
 					/>
 				);
 			})}
-		</ul>
+		</Card.Group>
 	);
 }
