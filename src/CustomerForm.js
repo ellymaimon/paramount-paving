@@ -4,7 +4,7 @@ import { getAllCustomers } from "./db/queries";
 import * as mutations from "./db/mutations";
 import { Button, Form, Message } from "semantic-ui-react";
 
-export function AddItem() {
+export default function CustomerForm() {
 	const [showForm, setShowForm] = React.useState(false);
 	const [formError, setFormError] = React.useState(false);
 	const [firstName, setFirstName] = React.useState("");
