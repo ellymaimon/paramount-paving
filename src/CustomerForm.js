@@ -58,12 +58,10 @@ export function AddItem() {
 					firstName,
 					lastName,
 					address: {
-						data: {
-							street,
-							city,
-							state,
-							zipCode,
-						}
+						street,
+						city,
+						state,
+						zipCode,
 					},
 					telephone,
 				}
