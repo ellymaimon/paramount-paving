@@ -4,6 +4,24 @@ import { Card, Image } from "semantic-ui-react";
 export default function CustomerCard( props ) {
 	const { firstName, lastName, telephone, address } = props.customer;
 
+	const formatPhone = ( telephone ) => {
+		if ( telephone.length === 10) {
+			console.log('telephone', telephone)
+			const phoneArray = telephone.split('');
+			console.log('phoneArray', phoneArray)
+			phoneArray.splice(0, 0, "(");
+			console.log('phoneArray', phoneArray)
+
+			phoneArray.splice(4, 0, ") ");
+			console.log('phoneArray', phoneArray)
+
+			phoneArray.splice(8, 0, "-");
+			console.log('phoneArray', phoneArray)
+
+			return phoneArray.join('');
+		}
+		return telephone;
+	};
 	return (
 		<Card>
 			<Card.Content>
