@@ -22,6 +22,11 @@ export default function CustomerCard( props ) {
 		}
 		return telephone;
 	};
+
+	const formatAddress = ( address ) => {
+		
+	}
+
 	return (
 		<Card>
 			<Card.Content>
